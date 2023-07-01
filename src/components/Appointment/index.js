@@ -6,7 +6,9 @@ import React from 'react';
 
 export default function Appointment(props) {
     return (
-        <Header time={props.time} />
-        //<article className="appointment"></article>
+        <article className="appointment">
+            <Header time={props.time} />
+            {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer.name} /> : <Empty />}
+        </article>
     )
 }

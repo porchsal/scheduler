@@ -171,7 +171,7 @@ storiesOf("Appointment", module)
                       )) 
   .add("Edit", () => (<Edit 
                         student="Jorge"
-                        interviewers={interviwers}
+                        interviewers={interviewers}
                         interviewer={interviewer}
                         onSave={action("onSave")}
                         onCancel={action("onCancel")}
