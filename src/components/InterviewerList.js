@@ -3,10 +3,6 @@ import React, { useState } from "react";
 import InterviewerListItem from "components//InterviewerListItem";
 
 export default function InterviewerList(props) {
-    //const [interviewer, setInterviewer] = useState(props.interviewer);
-    
-
-    
     const interviewers = props.interviewers.map(interviewer => {
         return (
         <InterviewerListItem
@@ -19,10 +15,6 @@ export default function InterviewerList(props) {
         />
     );
 });
-
- 
-
-
 
 return (
         <section className="interviewers" >
