@@ -3,7 +3,8 @@
 export function getAppointmentsForDay(state, day) {
     let result = [];
     let appointmentsForDay = state.days.filter(e => e.name === day);
-    
+    if(!appointmentsForDay) 
+        return result;
     if (appointmentsForDay.length === 0){ 
         console.log(result);
         return result;}
