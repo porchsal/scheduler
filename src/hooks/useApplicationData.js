@@ -1,4 +1,3 @@
-// import React, { useReducer, useEffect } from "react";
 import { useReducer, useEffect } from "react";
 import axios from "axios";
 
@@ -44,19 +43,6 @@ export default function useApplicationData(){
     const setDay = day => dispatch({ type: SET_DAY, day });
 
     useEffect(() => {
-  
-    //   Promise.all([
-    //     axios.get("/api/days"),
-    //     axios.get("/api/appointments"),
-    //     axios.get("/api/interviewers")
-  
-    //   ]).then(([days, appointments, interviewers]) => {
-    //     setState(prev => {
-    //       return (
-    //         {...prev, days: days.data, appointments: appointments.data, interviewers: interviewers.data}
-    //         )
-    //     })
-    //   })
         const daysData = axios.get("api/days");
         const appointmentsData = axios.get("api/appointments");
         const interviewersData = axios.get("api/interviewers");
@@ -78,10 +64,7 @@ export default function useApplicationData(){
           ...state.appointments[id],
           interview
         };
-        // const appointments = {
-        //   ...state.appointments,
-        //   [id]: appointment
-        // };
+
         return axios.put(`/api/appointments/${id}`, appointment)
         .then(() => dispatch({type: SET_INTERVIEW, id, interview}))
       };
@@ -91,10 +74,7 @@ export default function useApplicationData(){
         ...state.appointments[id],
         interview: null
       }
-    //   const appointments = {
-    //     ...state.appointments,
-    //     [id]: appointment
-    //   }
+
       return axios.delete(`/api/appointments/${id}`, appointment)
       .then(() => dispatch({type: SET_INTERVIEW, id, interview:null}))
     
@@ -105,7 +85,4 @@ export default function useApplicationData(){
         bookInterview,
         cancelInterview
     }
-
-
-
 };
