@@ -41,14 +41,14 @@ export default function Appointment(props) {
         transition(DELETE, true);
         props.cancelInterview(props.id)
         .then(() => transition(EMPTY))
-        .catch((error) => {transition(ERROR_DELETE, true)});
+        .catch((error) => transition(ERROR_DELETE, true));
     }
 
     function editInterview(name, interviewer) {
         transition(EDIT);
     }
     return (
-        <article className="appointment">
+        <article className="appointment" data-testid="appointment">
             <Header time={props.time} />
             {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
             {mode === CREATE && (
