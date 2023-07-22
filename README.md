@@ -5,7 +5,8 @@ Using the latest tools and techniques, we will build and test a React applicatio
 
 Install dependencies with `npm install`.
 
-[Download](https://github.com/Don-Stevenson/scheduler-api) the Server API with instructions to setup
+[Download](https://github.com/Don-Stevenson/scheduler-api) the Server API with instructions to setup, Scheduler API will run on (http://localhost:8003/)
+
 Running Webpack Development Server with 
 ```sh
 npm start
